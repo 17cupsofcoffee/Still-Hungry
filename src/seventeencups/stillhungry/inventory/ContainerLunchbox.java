@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 /**
@@ -48,6 +49,45 @@ public class ContainerLunchbox extends Container {
         for (int i = 0; i < 9; i++) {
             addSlotToContainer(new Slot(inventoryPlayer, i, 8 + i * 18, 142));
         }
+    }
+	
+	@Override
+	/**
+     * Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
+     */
+    public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
+    {
+        ItemStack itemstack = null;
+        Slot slot = (Slot)this.inventorySlots.get(par2);
+
+        if (slot != null && slot.getHasStack())
+        {
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
+
+            if (par2 < 6)
+            {
+                if (!this.mergeItemStack(itemstack1, 6, this.inventorySlots.size(), true))
+                {
+                    return null;
+                }
+            }
+            else if (!this.mergeItemStack(itemstack1, 0, 6, false))
+            {
+                return null;
+            }
+
+            if (itemstack1.stackSize == 0)
+            {
+                slot.putStack((ItemStack)null);
+            }
+            else
+            {
+                slot.onSlotChanged();
+            }
+        }
+
+        return itemstack;
     }
     
     @Override
