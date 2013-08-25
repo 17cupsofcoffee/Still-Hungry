@@ -374,7 +374,7 @@ public class TileStove extends TileEntity implements ISidedInventory {
 
     @Override
     public int[] getAccessibleSlotsFromSide(int var1) {
-        return null;
+        return new int[]{};
     }
 
     @Override

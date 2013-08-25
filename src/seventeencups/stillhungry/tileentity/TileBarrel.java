@@ -246,7 +246,7 @@ public class TileBarrel extends TileEntity implements ISidedInventory {
         if (var1 == 1) {
             return new int[]{0};
         } else {
-            return null;
+            return new int[]{};
         }
     }
 
