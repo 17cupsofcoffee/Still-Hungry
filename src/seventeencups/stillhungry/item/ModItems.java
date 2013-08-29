@@ -310,7 +310,7 @@ public class ModItems {
                 .setCreativeTab(CreativeTabs.tabFood)
                 .setUnlocalizedName("lambSteak");
 
-        cheese = new ItemFoodSH(ItemIds.CHEESE, 3, 0.8F, false)
+        cheese = new ItemCheese(ItemIds.CHEESE, 3, 0.8F, false)
                 .setMaxStackSize(64)
                 .setCreativeTab(CreativeTabs.tabFood)
                 .setUnlocalizedName("cheese");
