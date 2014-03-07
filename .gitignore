@@ -1,2 +1,27 @@
-Releases/
-build.properties
+#ant stuff
+build.xml
+/bin/
+/download/
+#Remove OS generated garbage
+*/.DS_Store
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+#gradle stuff
+/.gradle
+/build/
+/run/
+/out/
+#IDEA files from Gradle
+.idea/
+/*.iml
+/*.ipr
+/*.iws
+#Vim backups
+*~
+#Other Stuff
+/eclipse
