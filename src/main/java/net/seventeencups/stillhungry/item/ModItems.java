@@ -355,7 +355,7 @@ public class ModItems {
                 .setTextureName(StillHungry.modid + ":" + Strings.LAMBSTEAK_NAME)
                 .setUnlocalizedName("lambSteak");
 
-        cheese = new ItemCheese(3, 0.8F, false)
+        cheese = new ItemFoodSH(3, 0.8F, false)
                 .setMaxStackSize(64)
                 .setCreativeTab(CreativeTabs.tabFood)
                 .setTextureName(StillHungry.modid + ":" + Strings.CHEESE_NAME)
