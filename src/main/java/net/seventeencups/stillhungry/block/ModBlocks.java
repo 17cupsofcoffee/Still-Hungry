@@ -6,6 +6,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.seventeencups.stillhungry.lib.Strings;
 
 /**
@@ -99,8 +100,8 @@ public class ModBlocks {
 
         GameRegistry.addRecipe(new ItemStack(stoveBlock), "iii", "s s", "sss",
                 'i', new ItemStack(Items.iron_ingot), 's', new ItemStack(Blocks.stone));
-        GameRegistry.addRecipe(new ItemStack(brewingBarrel), "www", "iii", "www",
-                'w', new ItemStack(Blocks.planks, 1, -1), 'i', new ItemStack(Items.iron_ingot));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(brewingBarrel), "www", "iii", "www",
+                'w', "plankWood", 'i', new ItemStack(Items.iron_ingot)));
 
         GameRegistry.addRecipe(hedgeStack, "ll", "ll", 'l', leavesStack);
         GameRegistry.addShapelessRecipe(new ItemStack(roseHedge), hedgeStack, new ItemStack(Blocks.red_flower));

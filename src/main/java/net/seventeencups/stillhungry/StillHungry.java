@@ -1,5 +1,6 @@
 package net.seventeencups.stillhungry;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -78,6 +79,7 @@ public class StillHungry {
         }
 
         MinecraftForge.EVENT_BUS.register(new EventHooks());
+        FMLCommonHandler.instance().bus().register(new FMLEventHooks());
 
         proxy.registerRenderers();
 
