@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.seventeencups.stillhungry.StillHungry;
 import net.seventeencups.stillhungry.lib.Strings;
 
 /**
@@ -36,19 +37,19 @@ public class ModBlocks {
         hedge = new BlockHedge().setHardness(0.25f)
                 .setStepSound(Block.soundTypeGrass)
                 .setBlockName("hedge")
-                .setCreativeTab(CreativeTabs.tabDecorations);
+                .setCreativeTab(StillHungry.tabStillHungry);
 
         roseHedge = new BlockHedge()
                 .setHardness(0.25f)
                 .setStepSound(Block.soundTypeGrass)
                 .setBlockName("roseHedge")
-                .setCreativeTab(CreativeTabs.tabDecorations);
+                .setCreativeTab(StillHungry.tabStillHungry);
 
         daffodilHedge = new BlockHedge()
                 .setHardness(0.25f)
                 .setStepSound(Block.soundTypeGrass)
                 .setBlockName("daffodilHedge")
-                .setCreativeTab(CreativeTabs.tabDecorations);
+                .setCreativeTab(StillHungry.tabStillHungry);
 
         riceBlock = new BlockRice()
                 .setHardness(0.0f)
@@ -67,7 +68,7 @@ public class ModBlocks {
                 .setCreativeTab(null);
 
         brewingBarrel = new BlockBarrel()
-                .setCreativeTab(CreativeTabs.tabDecorations)
+                .setCreativeTab(StillHungry.tabStillHungry)
                 .setBlockName("brewingBarrel");
 
         grapeBlock = new BlockGrape()

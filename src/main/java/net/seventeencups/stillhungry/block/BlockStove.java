@@ -57,7 +57,7 @@ public class BlockStove extends BlockContainer {
         setHardness(2.0F);
         setResistance(5.0F);
         setBlockName("stoveBlock");
-        setCreativeTab(CreativeTabs.tabDecorations);
+        setCreativeTab(StillHungry.tabStillHungry);
         isActive = active;
 
     }

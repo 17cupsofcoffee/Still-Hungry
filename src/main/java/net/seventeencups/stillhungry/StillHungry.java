@@ -10,6 +10,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.seventeencups.stillhungry.block.ModBlocks;
@@ -49,6 +51,13 @@ public class StillHungry {
     public static CommonProxy proxy;
     
     public static Potion potionDrunkenness;
+
+    public static CreativeTabs tabStillHungry = new CreativeTabs("tabStillHungry") {
+        @Override
+        public Item getTabIconItem() {
+            return ModItems.fryingPan;
+        }
+    };
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
