@@ -12,6 +12,9 @@ package net.seventeencups.stillhungry.lib;
 
 public class Strings {
 
+    public static final String UUID_MOST_SIG = "UUIDMostSig";
+    public static final String UUID_LEAST_SIG = "UUIDLeastSig";
+
     public static String HEDGE_NAME = "hedge";
     public static String ROSEHEDGE_NAME = "roseHedge";
     public static String DAFFODILHEDGE_NAME = "daffodilHedge";

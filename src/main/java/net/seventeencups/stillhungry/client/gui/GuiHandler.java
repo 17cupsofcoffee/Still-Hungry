@@ -10,6 +10,7 @@ import net.seventeencups.stillhungry.client.gui.inventory.GuiStove;
 import net.seventeencups.stillhungry.inventory.ContainerBarrel;
 import net.seventeencups.stillhungry.inventory.ContainerLunchbox;
 import net.seventeencups.stillhungry.inventory.ContainerStove;
+import net.seventeencups.stillhungry.inventory.InventoryLunchbox;
 import net.seventeencups.stillhungry.tileentity.TileBarrel;
 import net.seventeencups.stillhungry.tileentity.TileStove;
 
@@ -38,12 +39,11 @@ public class GuiHandler implements IGuiHandler {
                 return new ContainerBarrel(player.inventory, (TileBarrel) tileEntity);
             }
         } else if (id == 2) {
-                return new ContainerLunchbox(player.inventory, world, player);
+                return new ContainerLunchbox(player, new InventoryLunchbox(player.getHeldItem()));
         }
         return null;
     }
 
-    //returns an instance of the Gui you made earlier
     @Override
     public Object getClientGuiElement(int id, EntityPlayer player, World world,
             int x, int y, int z) {
@@ -57,7 +57,7 @@ public class GuiHandler implements IGuiHandler {
                 return new GuiBarrel(player.inventory, (TileBarrel) tileEntity);
             }
         } else if (id == 2) {
-                return new GuiLunchbox(player.inventory, world, player);
+                return new GuiLunchbox(player, new InventoryLunchbox(player.getHeldItem()));
         }
         return null;
     }

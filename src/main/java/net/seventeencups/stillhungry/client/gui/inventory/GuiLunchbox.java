@@ -3,10 +3,12 @@ package net.seventeencups.stillhungry.client.gui.inventory;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.seventeencups.stillhungry.StillHungry;
 import net.seventeencups.stillhungry.inventory.ContainerLunchbox;
+import net.seventeencups.stillhungry.inventory.InventoryLunchbox;
 import org.lwjgl.opengl.GL11;
 
 /**
@@ -20,23 +22,27 @@ import org.lwjgl.opengl.GL11;
 */
 
 public class GuiLunchbox extends GuiContainer {
+    private final ItemStack parentItemStack;
+    private final InventoryLunchbox inventoryLunchbox;
 
-    public GuiLunchbox(InventoryPlayer inventoryPlayer, World world, EntityPlayer player) {
+    public GuiLunchbox(EntityPlayer entityPlayer, InventoryLunchbox inventoryLunchbox) {
         //the container is instanciated and passed to the superclass for handling
-        super(new ContainerLunchbox(inventoryPlayer, world, player));
+        super(new ContainerLunchbox(entityPlayer, inventoryLunchbox));
+
+        this.parentItemStack = inventoryLunchbox.parentItemStack;
+        this.inventoryLunchbox = inventoryLunchbox;
     }
 
     @Override
-    protected void drawGuiContainerForegroundLayer(int par1, int par2) {
+    protected void drawGuiContainerForegroundLayer(int x, int y) {
     }
 
     @Override
-    protected void drawGuiContainerBackgroundLayer(float par1, int par2,
-            int par3) {
+    protected void drawGuiContainerBackgroundLayer(float opacity, int x, int y) {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         mc.renderEngine.bindTexture(new ResourceLocation(StillHungry.modid + ":textures/gui/lunchbox.png"));
-        int x = (width - xSize) / 2;
-        int y = (height - ySize) / 2;
-        this.drawTexturedModalRect(x, y, 0, 0, this.xSize, this.ySize);
+        int xStart = (width - xSize) / 2;
+        int yStart = (height - ySize) / 2;
+        this.drawTexturedModalRect(xStart, yStart, 0, 0, this.xSize, this.ySize);
     }
 }

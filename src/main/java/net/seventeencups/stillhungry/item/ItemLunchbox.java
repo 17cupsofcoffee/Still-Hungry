@@ -5,6 +5,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.seventeencups.stillhungry.StillHungry;
 import net.seventeencups.stillhungry.inventory.InventoryLunchbox;
+import net.seventeencups.stillhungry.util.NBTHelper;
+
+import java.util.List;
 
 /**
 * Still-Hungry
@@ -23,21 +26,32 @@ public class ItemLunchbox extends ItemSH {
     }
 
     @Override
-    public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
-        if (!player.isSneaking()) {
-            if (!world.isRemote) {
-                player.openGui(StillHungry.instance, 2, world, 0, 0, 0);
-            }
+    public boolean getShareTag() {
+        return true;
+    }
+
+    @Override
+    public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
+        if (!world.isRemote) {
+            NBTHelper.setUUID(itemStack);
+            entityPlayer.openGui(StillHungry.instance, 2, entityPlayer.worldObj, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ);
         }
 
         return itemStack;
     }
-    
+
     @Override
-    public void onCreated(ItemStack stack, World world, EntityPlayer player) {
-        if ((InventoryLunchbox)world.perWorldStorage.loadData(InventoryLunchbox.class, player.getCommandSenderName() + ".lunchbox") == null) {
-            InventoryLunchbox data = new InventoryLunchbox(player.getCommandSenderName() + ".lunchbox");
-            world.perWorldStorage.setData(player.getCommandSenderName() + ".lunchbox", data);
+    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean bool) {
+        InventoryLunchbox inventoryLunchbox = new InventoryLunchbox(itemStack);
+
+        if (inventoryLunchbox.getSizeInventory() > 0) {
+            for (int i = 0; i < inventoryLunchbox.getSizeInventory(); i++) {
+                if (inventoryLunchbox.getStackInSlot(i) != null) {
+                    list.add(inventoryLunchbox.getStackInSlot(i).stackSize + "x " +
+                            inventoryLunchbox.getStackInSlot(i).getDisplayName());
+                }
+            }
         }
     }
+
 }
