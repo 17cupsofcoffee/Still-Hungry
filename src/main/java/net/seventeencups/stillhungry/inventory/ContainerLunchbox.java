@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 
 /**
@@ -64,8 +65,34 @@ public class ContainerLunchbox extends Container {
 
     @Override
     public ItemStack transferStackInSlot(EntityPlayer entityPlayer, int slotIndex) {
-        //TODO
-        return null;
+        ItemStack newItemStack = null;
+        Slot slot = (Slot) inventorySlots.get(slotIndex);
+
+        if (slot != null && slot.getHasStack()) {
+            ItemStack itemStack = slot.getStack();
+            newItemStack = itemStack.copy();
+
+            if (!(itemStack.getItem() instanceof ItemFood)) {
+                return null;
+            }
+            else if (slotIndex < 6) {
+                if (!this.mergeItemStack(itemStack, 6, inventorySlots.size(), false)) {
+                    return null;
+                }
+            }
+            else if (!this.mergeItemStack(itemStack, 0, 6, false)) {
+                return null;
+            }
+
+            if (itemStack.stackSize == 0) {
+                slot.putStack(null);
+            }
+            else {
+                slot.onSlotChanged();
+            }
+        }
+
+        return newItemStack;
     }
 
     public void saveInventory(EntityPlayer entityPlayer) {

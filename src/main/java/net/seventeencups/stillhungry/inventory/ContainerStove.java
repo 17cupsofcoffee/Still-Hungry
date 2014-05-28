@@ -8,6 +8,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.seventeencups.stillhungry.recipe.RecipesStove;
 import net.seventeencups.stillhungry.tileentity.TileStove;
 
 import java.util.Iterator;
@@ -61,41 +62,44 @@ public class ContainerStove extends Container {
     }
 
     @Override
-    public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int slot) {
-//            ItemStack stack = null;
-//            Slot slotObject = (Slot) inventorySlots.get(slot);
-//
-//            //null checks and checks if the item can be stacked (maxStackSize > 1)
-//            if (slotObject != null && slotObject.getHasStack()) {
-//                    ItemStack stackInSlot = slotObject.getStack();
-//                    stack = stackInSlot.copy();
-//
-//                    //merges the item into player inventory since its in the tileEntity
-//                    //this assumes only 1 slot, for inventories with > 1 slots, check out the Chest Container.
-//                    if (slot <= 4) {
-//                            if (!mergeItemStack(stackInSlot, 1,
-//                                            inventorySlots.size(), true)) {
-//                                    return null;
-//                            }
-//                            
-//                    //places it into the tileEntity is possible since its in the player inventory
-//                    } else if (MoreFoodsStoveTileEntity.isItemFuel(stackInSlot)){
-//                    	if (!mergeItemStack(stackInSlot, 3, 4, false)) {
-//                            return null; 
-//                    	}
-//                    } else if (!mergeItemStack(stackInSlot, 0, 3, false)) {
-//                    	return null;
-//                    }
-//
-//                    if (stackInSlot.stackSize == 0) {
-//                            slotObject.putStack(null);
-//                    } else {
-//                            slotObject.onSlotChanged();
-//                    }
-//            }
-//
-//            return stack;
-        return null;
+    public ItemStack transferStackInSlot(EntityPlayer entityPlayer, int slotIndex) {
+        ItemStack newItemStack = null;
+        Slot slot = (Slot) inventorySlots.get(slotIndex);
+
+        if (slot != null && slot.getHasStack()) {
+            ItemStack itemStack = slot.getStack();
+            newItemStack = itemStack.copy();
+
+            if (slotIndex < 6) {
+                if (!this.mergeItemStack(itemStack, 6, inventorySlots.size(), false)) {
+                    return null;
+                }
+            }
+            // Is it a tool?
+            else if (RecipesStove.cooking().toolList.contains(itemStack.getItem())) {
+                if (!this.mergeItemStack(itemStack, 2, 3, false)) {
+                    return null;
+                }
+            }
+            // Is it fuel?
+            else if (tileEntity.getItemBurnTime(itemStack) != 0) {
+                if (!this.mergeItemStack(itemStack, 3, 4, false)) {
+                    return null;
+                }
+            }
+            else if (!this.mergeItemStack(itemStack, 0, 4, false)) {
+                return null;
+            }
+
+            if (itemStack.stackSize == 0) {
+                slot.putStack(null);
+            }
+            else {
+                slot.onSlotChanged();
+            }
+        }
+
+        return newItemStack;
     }
 
     @Override

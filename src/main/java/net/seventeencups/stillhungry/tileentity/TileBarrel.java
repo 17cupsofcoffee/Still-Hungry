@@ -170,7 +170,7 @@ public class TileBarrel extends TileEntity implements ISidedInventory {
                 if (this.fruitType == 0 && this.inv[0] != null) {
                     if (this.inv[0].isItemEqual(new ItemStack(Items.water_bucket))) {
                         var2 = true;
-                        this.inv[0] = new ItemStack(Items.water_bucket, 1);
+                        this.inv[0] = new ItemStack(Items.bucket, 1);
                         isFilled = 1;
                     }
                 }

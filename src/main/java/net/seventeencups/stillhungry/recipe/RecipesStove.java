@@ -41,6 +41,9 @@ public class RecipesStove {
     private List<Item> frenchFriesRecipe = Arrays.asList(Items.potato, ModItems.oil, ModItems.fryingPan);
     private List<Item> potatoCakeRecipe = Arrays.asList(Items.potato, ModItems.flour, ModItems.fryingPan);
 
+    // Used for shift clicking in the stove
+    public List<Item> toolList = Arrays.asList(ModItems.fryingPan, ModItems.mug);
+
     /**
      * Used to call methods addSmelting and getSmeltingResult.
      */

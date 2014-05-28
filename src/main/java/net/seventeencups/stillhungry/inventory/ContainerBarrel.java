@@ -4,10 +4,12 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.seventeencups.stillhungry.item.ModItems;
 import net.seventeencups.stillhungry.tileentity.TileBarrel;
 
 import java.util.Iterator;
@@ -33,8 +35,8 @@ public class ContainerBarrel extends Container {
     public ContainerBarrel(InventoryPlayer inventoryPlayer, TileBarrel te) {
         tileEntity = te;
 
-        addSlotToContainer(new Slot(tileEntity, 0, 80, 25));
-        addSlotToContainer(new Slot(tileEntity, 1, 123, 56));
+        addSlotToContainer(new SlotBarrel(tileEntity, 0, 80, 25));
+        addSlotToContainer(new SlotBarrel(tileEntity, 1, 123, 56));
 
         bindPlayerInventory(inventoryPlayer);
     }
@@ -58,40 +60,7 @@ public class ContainerBarrel extends Container {
     }
 
     @Override
-    public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int slot) {
-//            ItemStack stack = null;
-//            Slot slotObject = (Slot) inventorySlots.get(slot);
-//
-//            //null checks and checks if the item can be stacked (maxStackSize > 1)
-//            if (slotObject != null && slotObject.getHasStack()) {
-//                    ItemStack stackInSlot = slotObject.getStack();
-//                    stack = stackInSlot.copy();
-//
-//                    //merges the item into player inventory since its in the tileEntity
-//                    //this assumes only 1 slot, for inventories with > 1 slots, check out the Chest Container.
-//                    if (slot <= 4) {
-//                            if (!mergeItemStack(stackInSlot, 1,
-//                                            inventorySlots.size(), true)) {
-//                                    return null;
-//                            }
-//                            
-//                    //places it into the tileEntity is possible since its in the player inventory
-//                    } else if (MoreFoodsStoveTileEntity.isItemFuel(stackInSlot)){
-//                    	if (!mergeItemStack(stackInSlot, 3, 4, false)) {
-//                            return null; 
-//                    	}
-//                    } else if (!mergeItemStack(stackInSlot, 0, 3, false)) {
-//                    	return null;
-//                    }
-//
-//                    if (stackInSlot.stackSize == 0) {
-//                            slotObject.putStack(null);
-//                    } else {
-//                            slotObject.onSlotChanged();
-//                    }
-//            }
-//
-//            return stack;
+    public ItemStack transferStackInSlot(EntityPlayer entityPlayer, int slotIndex) {
         return null;
     }
 
