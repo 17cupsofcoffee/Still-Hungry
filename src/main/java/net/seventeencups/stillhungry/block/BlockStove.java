@@ -130,7 +130,7 @@ public class BlockStove extends BlockContainer {
                     case 4:
                         return stoveRightIcon;
                     case 5:
-                        return stoveLeftIcon;
+                        return stoveRightIcon;
                 }
             case 3:
                 switch (side) {
@@ -149,7 +149,7 @@ public class BlockStove extends BlockContainer {
                     case 4:
                         return stoveLeftIcon;
                     case 5:
-                        return stoveRightIcon;
+                        return stoveLeftIcon;
                 }
             case 4:
                 switch (side) {
@@ -162,7 +162,7 @@ public class BlockStove extends BlockContainer {
                             return stoveTopOffIcon;
                         }
                     case 2:
-                        return stoveLeftIcon;
+                        return stoveRightIcon;
                     case 3:
                         return stoveRightIcon;
                     case 4:
@@ -181,7 +181,7 @@ public class BlockStove extends BlockContainer {
                             return stoveTopOffIcon;
                         }
                     case 2:
-                        return stoveRightIcon;
+                        return stoveLeftIcon;
                     case 3:
                         return stoveLeftIcon;
                     case 4:
@@ -197,7 +197,7 @@ public class BlockStove extends BlockContainer {
                     case 1:
                         return stoveTopOffIcon;
                     case 2:
-                        return stoveLeftIcon;
+                        return stoveRightIcon;
                     case 3:
                         return stoveRightIcon;
                     case 4:
