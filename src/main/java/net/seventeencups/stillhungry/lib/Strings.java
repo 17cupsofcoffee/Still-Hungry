@@ -35,6 +35,7 @@ public class Strings {
     public static String BOTTLEWINE_NAME = "bottleWine";
     public static String BOTTLECIDER_NAME = "bottleCider";
     public static String BOXLUNCH_NAME = "boxLunch";
+    public static String BUCKETCHEESE_NAME = "bucketCheese";
     public static String BUTTER_NAME = "butter";
     public static String CHEESE_NAME = "cheese";
     public static String CHEESEBURGER_NAME = "cheeseBurger";

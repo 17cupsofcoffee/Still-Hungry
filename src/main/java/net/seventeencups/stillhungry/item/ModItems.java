@@ -83,6 +83,7 @@ public class ModItems {
     public static Item taco;
 
     public static Item lambSteak;
+    public static Item bucketCheese;
     public static Item cheese;
     public static Item macAndCheese;
     public static Item ramen;
@@ -423,6 +424,13 @@ public class ModItems {
                 .setTextureName(StillHungry.modid + ":" + Strings.LAMBSTEAK_NAME)
                 .setUnlocalizedName("lambSteak");
 
+        bucketCheese = new ItemSH()
+                .setMaxStackSize(1)
+                .setCreativeTab(StillHungry.tabStillHungry)
+                .setTextureName(StillHungry.modid + ":" + Strings.BUCKETCHEESE_NAME)
+                .setContainerItem(Items.bucket)
+                .setUnlocalizedName("bucketCheese");
+
         cheese = new ItemFoodSH(3, 0.8F, false)
                 .setMaxStackSize(64)
                 .setCreativeTab(StillHungry.tabStillHungry)
@@ -562,6 +570,7 @@ public class ModItems {
         GameRegistry.registerItem(tacoShell, "StillHungry_tacoShell");
         GameRegistry.registerItem(taco, "StillHungry_taco");
 
+        GameRegistry.registerItem(bucketCheese, "StillHungry_bucketCheese");
         GameRegistry.registerItem(cheese, "StillHungry_cheese");
         GameRegistry.registerItem(macAndCheese, "StillHungry_macAndCheese");
         GameRegistry.registerItem(ramen, "StillHungry_ramen");
@@ -676,11 +685,12 @@ public class ModItems {
 
         GameRegistry.addSmelting(squid, new ItemStack(squidCooked), 0.35f);
         GameRegistry.addSmelting(lamb, new ItemStack(lambCooked), 0.35f);
-        GameRegistry.addSmelting(Items.milk_bucket, new ItemStack(cheese), 0.35f);
+        GameRegistry.addSmelting(Items.milk_bucket, new ItemStack(bucketCheese), 0.35f);
 
 
         GameRegistry.addShapelessRecipe(new ItemStack(strawberrySeed), new ItemStack(strawberry));
         GameRegistry.addShapelessRecipe(new ItemStack(riceSeed), new ItemStack(rice));
         GameRegistry.addShapelessRecipe(new ItemStack(grapeSeed), new ItemStack(grapes));
+        GameRegistry.addShapelessRecipe(new ItemStack(cheese), new ItemStack(bucketCheese));
     }
 }
