@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "stillhungry",
+  "name": "Still Hungry!",
+  "description": "A fancy food mod for Minecraft.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authors": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "url": "http://stillhungry.seventeencups.net",
+  "updateUrl": "http://stillhungry.seventeencups.net/download",
+  "authors": [ "17CupsOfCoffee", "DizzyAlyx", "BethW08" ],
+  "credits": "Special thanks to all the open source mod developers in the community; without you, this mod would probably not exist!",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
