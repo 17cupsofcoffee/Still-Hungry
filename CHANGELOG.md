@@ -2,13 +2,13 @@
 ##Version 2.1.1:
 
 * Translations into Russian, German and French.
-* The lunchbox is functional again after being broken in 2.1.0. The functionality of it has also changed; each lunchbox now has an individual inventory instead of there being one per player. (Issue #8)
+* The lunchbox is functional again after being broken in 2.1.0. The functionality of it has also changed; each lunchbox now has an individual inventory instead of there being one per player. Fixes Issue #8.
 * Sprites and textures were updated to add more color and contrast, as well as fixing some consistency issues.
-* The cheese recipe was changed to fix the issue with buckets duplicating in the furnace. You now receive a bucket of cheese when you cook milk, which can then be crafted into a block of cheese - this will return the bucket as normal. (Issue #7)
-* The mod now has a creative mode tab especially for its items. Also if you start a new world, you should notice the items are in a bit of a more sensible order in creative. (Issue #9)
-* The barrel can now be crafted from any wood type, including wood from other mods and the newer types of wood added in recent Minecraft updates. (Issue #13)
-* Shift clicking functionality was added to the stove and lunchbox. This will be added to the barrel in a later update. (Issue #5)
-* A bug with the barrel not draining water from water buckets was fixed. (Issue #16)
+* The cheese recipe was changed to fix the issue with buckets duplicating in the furnace. You now receive a bucket of cheese when you cook milk, which can then be crafted into a block of cheese - this will return the bucket as normal. Fixes Issue #7.
+* The mod now has a creative mode tab especially for its items. Also if you start a new world, you should notice the items are in a bit of a more sensible order in creative. Fixes Issue #9.
+* The barrel can now be crafted from any wood type, including wood from other mods and the newer types of wood added in recent Minecraft updates. Fixes Issue #13.
+* Shift clicking functionality was added to the stove and lunchbox. This will be added to the barrel in a later update. Fixes Issue #5.
+* A bug with the barrel not draining water from water buckets was fixed. Fixes Issue #16.
 
 ##Version 2.1.0
 
@@ -19,13 +19,13 @@
 * French Toast is now made using bread and eggs rather than bread and butter.
 * Eating Mac and Cheese or Fruit Salad now returns the bowl used in the crafting recipe.
 * Killing a sheep with a Fire Aspect enchant now gives cooked meat, as with the vanilla animals.
-* Buckets being returned after making cheese is now more reliable. (Issue #4)
+* Buckets being returned after making cheese is now more reliable. Fixes Issue #4.
 
 ##Version 2.0.1
 * General bugfixes and code cleanup.
-* Shift clicking in the stove/barrel/lunchbox no longer causes crashes. (Issue #2)
-* The stove now accepts fuel items added in Minecraft 1.6, such as the coal block. (Issue #3)
-* The bucket used in the cheese crafting recipe is now returned to the player. (Issue #4)
+* Shift clicking in the stove/barrel/lunchbox no longer causes crashes. Fixes Issue #2.
+* The stove now accepts fuel items added in Minecraft 1.6, such as the coal block. Fixes Issue #3.
+* The bucket used in the cheese crafting recipe is now returned to the player. Fixes Issue #4.
 * Hoppers attached to the stove/barrel no longer crash the game. They are not functional yet, however - this will be added in a later update.
 
 ##Version 2.0.0
