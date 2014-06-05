@@ -2,13 +2,12 @@ package net.seventeencups.stillhungry.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.seventeencups.stillhungry.StillHungry;
-import net.seventeencups.stillhungry.lib.Strings;
+import net.seventeencups.stillhungry.reference.Strings;
 
 /**
 * Still-Hungry

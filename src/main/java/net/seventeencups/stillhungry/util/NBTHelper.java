@@ -2,7 +2,7 @@ package net.seventeencups.stillhungry.util;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.seventeencups.stillhungry.lib.Strings;
+import net.seventeencups.stillhungry.reference.Strings;
 
 import java.util.UUID;
 

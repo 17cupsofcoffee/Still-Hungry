@@ -1,4 +1,4 @@
-package net.seventeencups.stillhungry.lib;
+package net.seventeencups.stillhungry.reference;
 
 /**
 * Still-Hungry

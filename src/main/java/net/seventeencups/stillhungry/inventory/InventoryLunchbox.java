@@ -5,7 +5,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.seventeencups.stillhungry.lib.Strings;
+import net.seventeencups.stillhungry.reference.Strings;
 import net.seventeencups.stillhungry.util.INBTTaggable;
 import net.seventeencups.stillhungry.util.NBTHelper;
 

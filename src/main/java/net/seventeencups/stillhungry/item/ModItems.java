@@ -1,7 +1,6 @@
 package net.seventeencups.stillhungry.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -9,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.seventeencups.stillhungry.StillHungry;
 import net.seventeencups.stillhungry.block.ModBlocks;
-import net.seventeencups.stillhungry.lib.Strings;
+import net.seventeencups.stillhungry.reference.Strings;
 
 /**
 * Still-Hungry
