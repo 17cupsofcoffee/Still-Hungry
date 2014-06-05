@@ -11,6 +11,7 @@ import net.seventeencups.stillhungry.inventory.ContainerBarrel;
 import net.seventeencups.stillhungry.inventory.ContainerLunchbox;
 import net.seventeencups.stillhungry.inventory.ContainerStove;
 import net.seventeencups.stillhungry.inventory.InventoryLunchbox;
+import net.seventeencups.stillhungry.reference.GuiIds;
 import net.seventeencups.stillhungry.tileentity.TileBarrel;
 import net.seventeencups.stillhungry.tileentity.TileStove;
 
@@ -30,15 +31,15 @@ public class GuiHandler implements IGuiHandler {
     public Object getServerGuiElement(int id, EntityPlayer player, World world,
             int x, int y, int z) {
         TileEntity tileEntity = world.getTileEntity(x, y, z);
-        if (id == 0) {
+        if (id == GuiIds.STOVE) {
             if (tileEntity instanceof TileStove) {
                 return new ContainerStove(player.inventory, (TileStove) tileEntity);
             }
-        } else if (id == 1) {
+        } else if (id == GuiIds.BARREL) {
             if (tileEntity instanceof TileBarrel) {
                 return new ContainerBarrel(player.inventory, (TileBarrel) tileEntity);
             }
-        } else if (id == 2) {
+        } else if (id == GuiIds.LUNCHBOX) {
                 return new ContainerLunchbox(player, new InventoryLunchbox(player.getHeldItem()));
         }
         return null;
@@ -48,15 +49,15 @@ public class GuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int id, EntityPlayer player, World world,
             int x, int y, int z) {
         TileEntity tileEntity = world.getTileEntity(x, y, z);
-        if (id == 0) {
+        if (id == GuiIds.STOVE) {
             if (tileEntity instanceof TileStove) {
                 return new GuiStove(player.inventory, (TileStove) tileEntity);
             }
-        } else if (id == 1) {
+        } else if (id == GuiIds.BARREL) {
             if (tileEntity instanceof TileBarrel) {
                 return new GuiBarrel(player.inventory, (TileBarrel) tileEntity);
             }
-        } else if (id == 2) {
+        } else if (id == GuiIds.LUNCHBOX) {
                 return new GuiLunchbox(player, new InventoryLunchbox(player.getHeldItem()));
         }
         return null;

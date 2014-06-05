@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.seventeencups.stillhungry.StillHungry;
 import net.seventeencups.stillhungry.inventory.InventoryLunchbox;
+import net.seventeencups.stillhungry.reference.GuiIds;
 import net.seventeencups.stillhungry.util.NBTHelper;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class ItemLunchbox extends ItemSH {
     public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
         if (!world.isRemote) {
             NBTHelper.setUUID(itemStack);
-            entityPlayer.openGui(StillHungry.instance, 2, entityPlayer.worldObj, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ);
+            entityPlayer.openGui(StillHungry.instance, GuiIds.LUNCHBOX, entityPlayer.worldObj, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ);
         }
 
         return itemStack;

@@ -18,6 +18,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.seventeencups.stillhungry.StillHungry;
+import net.seventeencups.stillhungry.reference.GuiIds;
 import net.seventeencups.stillhungry.tileentity.TileStove;
 
 import java.util.Random;
@@ -239,7 +240,7 @@ public class BlockStove extends BlockContainer {
             return false;
         }
 
-        player.openGui(StillHungry.instance, 0, world, x, y, z);
+        player.openGui(StillHungry.instance, GuiIds.STOVE, world, x, y, z);
         return true;
     }
 

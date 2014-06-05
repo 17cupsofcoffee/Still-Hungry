@@ -13,6 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.seventeencups.stillhungry.StillHungry;
+import net.seventeencups.stillhungry.reference.GuiIds;
 import net.seventeencups.stillhungry.tileentity.TileBarrel;
 
 import java.util.Random;
@@ -93,7 +94,7 @@ public class BlockBarrel extends BlockContainer {
         }
 
         if (!world.isRemote) {
-            player.openGui(StillHungry.instance, 1, world, x, y, z);
+            player.openGui(StillHungry.instance, GuiIds.BARREL, world, x, y, z);
         }
 
         return true;
