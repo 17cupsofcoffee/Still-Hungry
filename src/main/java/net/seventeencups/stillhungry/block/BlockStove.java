@@ -61,6 +61,11 @@ public class BlockStove extends BlockContainer {
         setCreativeTab(StillHungry.tabStillHungry);
         isActive = active;
 
+        if (isActive) {
+            setLightLevel(0.875F);
+            setCreativeTab(null);
+        }
+
     }
 
     @Override

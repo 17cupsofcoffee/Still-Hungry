@@ -28,7 +28,7 @@ public class ModBlocks {
     public static final BlockStrawberry strawberryBlock = new BlockStrawberry();
     public static final BlockGrape grapeBlock           = new BlockGrape();
     public static final BlockStove stoveBlock           = new BlockStove(false);
-    public static final BlockStove stoveBlockBurning    = (BlockStove) new BlockStove(true).setLightLevel(0.875F).setCreativeTab(null);
+    public static final BlockStove stoveBlockBurning    = new BlockStove(true);
     public static final BlockBarrel brewingBarrel       = new BlockBarrel();
 
 
