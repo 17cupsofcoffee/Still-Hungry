@@ -3,6 +3,7 @@ package net.seventeencups.stillhungry.recipe;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.seventeencups.stillhungry.item.ItemSH;
 import net.seventeencups.stillhungry.item.ModItems;
 
 import java.util.Arrays;
@@ -42,7 +43,7 @@ public class RecipesStove {
     private List<Item> potatoCakeRecipe = Arrays.asList(Items.potato, ModItems.flour, ModItems.fryingPan);
 
     // Used for shift clicking in the stove
-    public List<Item> toolList = Arrays.asList(ModItems.fryingPan, ModItems.mug);
+    public List<ItemSH> toolList = Arrays.asList(ModItems.fryingPan, ModItems.mug);
 
     /**
      * Used to call methods addSmelting and getSmeltingResult.

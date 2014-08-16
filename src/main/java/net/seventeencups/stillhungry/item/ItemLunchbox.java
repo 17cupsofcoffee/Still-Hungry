@@ -6,6 +6,7 @@ import net.minecraft.world.World;
 import net.seventeencups.stillhungry.StillHungry;
 import net.seventeencups.stillhungry.inventory.InventoryLunchbox;
 import net.seventeencups.stillhungry.reference.GuiIds;
+import net.seventeencups.stillhungry.reference.Strings;
 import net.seventeencups.stillhungry.util.NBTHelper;
 
 import java.util.List;
@@ -23,7 +24,9 @@ import java.util.List;
 public class ItemLunchbox extends ItemSH {
 
     public ItemLunchbox() {
-        super();
+        super(Strings.LUNCHBOX_NAME);
+
+        setMaxStackSize(1);
     }
 
     @Override

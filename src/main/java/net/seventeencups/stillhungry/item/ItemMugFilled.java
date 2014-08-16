@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.seventeencups.stillhungry.StillHungry;
 
 /**
 * Still-Hungry
@@ -17,8 +18,11 @@ import net.minecraft.world.World;
 */
 
 public class ItemMugFilled extends ItemFoodSH {
-    public ItemMugFilled(int hunger, float sat, boolean wolf) {
-        super(hunger, sat, wolf);
+    public ItemMugFilled(String unlocalizedName, int hunger, float sat, boolean wolf) {
+        super(unlocalizedName, hunger, sat, wolf);
+
+        setMaxStackSize(1);
+        setContainerItem(ModItems.mug);
     }
     
     @Override

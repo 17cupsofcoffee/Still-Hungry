@@ -22,488 +22,85 @@ import net.seventeencups.stillhungry.reference.Strings;
 
 public class ModItems {
 
-    public static Item lunchbox;
-    public static Item fryingPan;
-    public static Item oil;
-    public static Item flour;
+    public static final ItemSH lunchbox                 = new ItemLunchbox();
+    public static final ItemSH fryingPan                = new ItemFryingPan();
+    public static final ItemSH oil                      = new ItemSH(Strings.OIL_NAME);
+    public static final ItemSH flour                    = new ItemSH(Strings.FLOUR_NAME);
 
-    public static Item strawberrySeed;
-    public static Item riceSeed;
-    public static Item grapeSeed;
-    public static Item strawberry;
-    public static Item rice;
-    public static Item grapes;
+    public static final ItemSeedsSH strawberrySeed      = new ItemSeedsSH(Strings.STRAWBERRYSEED_NAME, ModBlocks.strawberryBlock, Blocks.farmland);
+    public static final ItemSeedsSH riceSeed            = new ItemSeedsSH(Strings.RICESEED_NAME, ModBlocks.riceBlock, Blocks.farmland);
+    public static final ItemSeedsSH grapeSeed           = new ItemSeedsSH(Strings.GRAPESEED_NAME, ModBlocks.grapeBlock, Blocks.farmland);
+    public static final ItemFoodSH strawberry           = new ItemFoodSH(Strings.STRAWBERRY_NAME, 3, 0.4f, false);
+    public static final ItemSH rice                     = new ItemSH(Strings.RICE_NAME);
+    public static final ItemFoodSH grapes               = new ItemFoodSH(Strings.GRAPES_NAME, 3, 0.8F, false);
 
-    public static Item squid;
-    public static Item squidCooked;
-    public static Item lamb;
-    public static Item lambCooked;
+    public static final ItemFoodSH squid                = new ItemFoodSH(Strings.SQUID_NAME, 2, 1f, false);
+    public static final ItemFoodSH squidCooked          = new ItemFoodSH(Strings.SQUIDCOOKED_NAME, 5, 1f, false);
+    public static final ItemFoodSH lamb                 = new ItemFoodSH(Strings.LAMB_NAME, 3, 1f, false);
+    public static final ItemFoodSH lambCooked           = new ItemFoodSH(Strings.LAMBCOOKED_NAME, 8, 1f, false);
 
-    public static Item zombieBurger;
-    public static Item porkBurger;
-    public static Item beefBurger;
-    public static Item chickenBurger;
-    public static Item lambBurger;
-    public static Item cheeseBurger;
-    public static Item fishBurger;
+    public static final ItemFoodSH zombieBurger         = (ItemFoodSH) new ItemFoodSH(Strings.ZOMBIEBURGER_NAME, 14, 1f, false)
+                                                            .setPotionEffect(Potion.hunger.id, 15, 0, 0.4f);
 
-    public static Item chocolate;
-    public static Item muffin;
-    public static Item muffinChoc;
-    public static Item mug;
-    public static Item mugChoc;
+    public static final ItemFoodSH porkBurger           = new ItemFoodSH(Strings.PORKBURGER_NAME, 18, 1f, false);
+    public static final ItemFoodSH beefBurger           = new ItemFoodSH(Strings.BEEFBURGER_NAME, 18, 1f, false);
+    public static final ItemFoodSH chickenBurger        = new ItemFoodSH(Strings.CHICKENBURGER_NAME, 16, 1f, false);
+    public static final ItemFoodSH lambBurger           = new ItemFoodSH(Strings.LAMBBURGER_NAME, 18, 1f, false);
+    public static final ItemFoodSH cheeseBurger         = new ItemFoodSH(Strings.CHEESEBURGER_NAME, 20, 1F, false);
+    public static final ItemFoodSH fishBurger           = new ItemFoodSH(Strings.FISHBURGER_NAME, 18, 0.9f, false);
 
-    public static Item applePie;
-    public static Item omelette;
-    public static Item bacon;
-    public static Item sushi;
+    public static final ItemFoodSH chocolate            = new ItemFoodSH(Strings.CHOCOLATE_NAME, 4, 0.7f, false).setMaxStackSize(16);
+    public static final ItemFoodSH muffin               = new ItemFoodSH(Strings.MUFFIN_NAME, 4, 0.7f, false).setMaxStackSize(16);
+    public static final ItemFoodSH muffinChoc           = new ItemFoodSH(Strings.MUFFINCHOC_NAME, 6, 0.8f, false).setMaxStackSize(16);
+    public static final ItemSH mug                      = new ItemSH(Strings.MUG_NAME).setMaxStackSize(1);
+    public static final ItemMugFilled mugChoc           = new ItemMugFilled(Strings.MUGCHOC_NAME, 4, 0.5f, false);
 
-    public static Item jamJar;
-    public static Item jamJarApple;
-    public static Item jamJarMelon;
-    public static Item jamJarStrawberry;
-    public static Item jamJarGrape;
+    public static final ItemFoodSH applePie             = new ItemFoodSH(Strings.APPLEPIE_NAME, 8, 0.8f, false).setMaxStackSize(16);
+    public static final ItemFoodSH omelette             = new ItemFoodSH(Strings.OMELETTE_NAME, 4, 1f, false);
+    public static final ItemFoodSH bacon                = new ItemFoodSH(Strings.BACON_NAME, 10, 1f, false);
+    public static final ItemFoodSH sushi                = new ItemFoodSH(Strings.SUSHI_NAME, 8, 1f, false);
 
-    public static Item sandwichApple;
-    public static Item sandwichMelon;
-    public static Item sandwichStrawberry;
-    public static Item sandwichGrape;
-    public static Item sandwichCheese;
+    public static final ItemSH jamJar                   = new ItemSH(Strings.JAMJAR_NAME).setMaxStackSize(16);
+    public static final ItemSH jamJarApple              = (ItemSH) new ItemSH(Strings.JAMJARAPPLE_NAME).setContainerItem(jamJar).setMaxStackSize(1);
+    public static final ItemSH jamJarMelon              = (ItemSH) new ItemSH(Strings.JAMJARMELON_NAME).setContainerItem(jamJar).setMaxStackSize(1);
+    public static final ItemSH jamJarStrawberry         = (ItemSH) new ItemSH(Strings.JAMJARSTRAWBERRY_NAME).setContainerItem(jamJar).setMaxStackSize(1);
+    public static final ItemSH jamJarGrape              = (ItemSH) new ItemSH(Strings.JAMJARGRAPE_NAME).setContainerItem(jamJar).setMaxStackSize(1);
 
-    public static Item pancakes;
-    public static Item pancakesApple;
+    public static final ItemFoodSH sandwichApple        = new ItemFoodSH(Strings.SANDWICHAPPLE_NAME, 16, 1f, false);
+    public static final ItemFoodSH sandwichMelon        = new ItemFoodSH(Strings.SANDWICHMELON_NAME, 16, 1f, false);
+    public static final ItemFoodSH sandwichStrawberry   = new ItemFoodSH(Strings.SANDWICHSTRAWBERRY_NAME, 16, 1f, false);
+    public static final ItemFoodSH sandwichGrape        = new ItemFoodSH(Strings.SANDWICHGRAPE_NAME, 16, 1f, false);
+    public static final ItemFoodSH sandwichCheese       = new ItemFoodSH(Strings.SANDWICHCHEESE_NAME, 16, 1f, false);
 
-    public static Item frenchToast;
-    public static Item boxLunch;
-    public static Item fruitSalad;
-    public static Item friedEgg;
-    public static Item scrambledEgg;
-    public static Item tacoShell;
-    public static Item taco;
+    public static final ItemFoodSH pancakes             = new ItemFoodSH(Strings.PANCAKES_NAME, 6, 0.8f, false);
+    public static final ItemFoodSH pancakesApple        = new ItemFoodSH(Strings.PANCAKESAPPLE_NAME, 11, 0.8f, false);
 
-    public static Item lambSteak;
-    public static Item bucketCheese;
-    public static Item cheese;
-    public static Item macAndCheese;
-    public static Item ramen;
+    public static final ItemFoodSH frenchToast          = new ItemFoodSH(Strings.FRENCHTOAST_NAME, 6, 0.8f, false);
+    public static final ItemFoodSH boxLunch             = new ItemFoodSH(Strings.BOXLUNCH_NAME, 10, 1f, false).setMaxStackSize(1);
+    public static final ItemFoodSH fruitSalad           = (ItemFoodSH) new ItemFoodSH(Strings.FRUITSALAD_NAME, 13, 1f, false).setContainerItem(Items.bowl).setMaxStackSize(1);
+    public static final ItemFoodSH friedEgg             = new ItemFoodSH(Strings.FRIEDEGG_NAME, 4, 1f, false);
+    public static final ItemFoodSH scrambledEgg         = new ItemFoodSH(Strings.SCRAMBLEDEGG_NAME, 8, 1f, false);
+    public static final ItemFoodSH tacoShell            = new ItemFoodSH(Strings.TACOSHELL_NAME, 6, 0.5f, false);
+    public static final ItemFoodSH taco                 = new ItemFoodSH(Strings.TACO_NAME, 14, 1f, false);
 
-    public static Item butter;
-    public static Item frenchFries;
-    public static Item potatoCake;
+    public static final ItemFoodSH lambSteak            = new ItemFoodSH(Strings.LAMBSTEAK_NAME, 10, 1f, false);
+    public static final ItemSH bucketCheese             = (ItemSH) new ItemSH(Strings.BUCKETCHEESE_NAME).setContainerItem(Items.bucket).setMaxStackSize(1);
+    public static final ItemFoodSH cheese               = new ItemFoodSH(Strings.CHEESE_NAME, 3, 0.8F, false);
+    public static final ItemFoodSH macAndCheese         = (ItemFoodSH) new ItemFoodSH(Strings.MACANDCHEESE_NAME, 17, 1F, false).setContainerItem(Items.bowl).setMaxStackSize(1);
+    public static final ItemFoodSH ramen                = new ItemFoodSH(Strings.RAMEN_NAME, 18, 1F, false);
 
-    public static Item bottle;
-    public static Item bottleWine;
-    public static Item bottleCider;
+    public static final ItemSH butter                   = new ItemSH(Strings.BUTTER_NAME);
+    public static final ItemFoodSH frenchFries          = new ItemFoodSH(Strings.FRENCHFRIES_NAME, 6, 0.5f, false);
+    public static final ItemFoodSH potatoCake           = new ItemFoodSH(Strings.POTATOCAKE_NAME, 8, 1f, false);
 
-    public static Item eyeCandy;
-    public static Item spiderLollipop;
+    public static final ItemSH bottle                   = new ItemSH(Strings.BOTTLE_NAME).setMaxStackSize(16);
+    public static final ItemBottleFilled bottleWine     = new ItemBottleFilled(Strings.BOTTLEWINE_NAME, 1, 0.4F, false);
+    public static final ItemBottleFilled bottleCider    = new ItemBottleFilled(Strings.BOTTLECIDER_NAME,1, 0.4F, false);
+
+    public static final ItemEyeCandy eyeCandy           = new ItemEyeCandy(Strings.EYECANDY_NAME, 0, 0.8f, false);
+    public static final ItemSpiderLollipop spiderLollipop = new ItemSpiderLollipop(Strings.SPIDERLOLLIPOP_NAME, 0, 0.8f, false);
     
     public static void init() {
-
-        lunchbox = new ItemLunchbox()
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.LUNCHBOX_NAME)
-                .setUnlocalizedName("lunchbox");
-
-        fryingPan = new ItemFryingPan()
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.FRYINGPAN_NAME)
-                .setUnlocalizedName("fryingPan")
-                .setMaxDamage(250);
-
-        oil = new ItemSH()
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.OIL_NAME)
-                .setUnlocalizedName("oil");
-
-        flour = new ItemSH()
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.FLOUR_NAME)
-                .setUnlocalizedName("flour");
-
-
-
-        strawberrySeed = new ItemSeedsSH(ModBlocks.strawberryBlock, Blocks.farmland)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.STRAWBERRYSEED_NAME)
-                .setUnlocalizedName("strawberrySeed");
-
-        riceSeed = new ItemSeedsSH(ModBlocks.riceBlock, Blocks.farmland)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.RICESEED_NAME)
-                .setUnlocalizedName("riceSeed");
-
-        grapeSeed = new ItemSeedsSH(ModBlocks.grapeBlock, Blocks.farmland)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.GRAPESEED_NAME)
-                .setUnlocalizedName("grapeSeed");
-
-        strawberry = new ItemFoodSH(3, 0.4f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.STRAWBERRY_NAME)
-                .setUnlocalizedName("strawberry");
-
-        rice = new ItemSH()
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.RICE_NAME)
-                .setUnlocalizedName("rice");
-
-        grapes = new ItemFoodSH(3, 0.8F, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.GRAPES_NAME)
-                .setUnlocalizedName("grapes");
-
-
-
-        squid = new ItemFoodSH(2, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SQUID_NAME)
-                .setUnlocalizedName("squid");
-
-        squidCooked = new ItemFoodSH(5, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SQUIDCOOKED_NAME)
-                .setUnlocalizedName("squidCooked");
-
-        lamb = new ItemFoodSH(3, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.LAMB_NAME)
-                .setUnlocalizedName("lamb");
-
-        lambCooked = new ItemFoodSH(8, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.LAMBCOOKED_NAME)
-                .setUnlocalizedName("lambCooked");
-
-
-
-        zombieBurger = new ItemFoodSH(14, 1f, false)
-                .setPotionEffect(Potion.hunger.id, 15, 0, 0.4f)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.ZOMBIEBURGER_NAME)
-                .setUnlocalizedName("zombieBurger");
-        
-        porkBurger = new ItemFoodSH(18, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.PORKBURGER_NAME)
-                .setUnlocalizedName("porkBurger");
-        
-        beefBurger = new ItemFoodSH(18, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.BEEFBURGER_NAME)
-                .setUnlocalizedName("beefBurger");
-        
-        chickenBurger = new ItemFoodSH(16, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.CHICKENBURGER_NAME)
-                .setUnlocalizedName("chickenBurger");
-        
-        lambBurger = new ItemFoodSH(18, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.LAMBBURGER_NAME)
-                .setUnlocalizedName("lambBurger");
-
-        cheeseBurger = new ItemFoodSH(20, 1F, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.CHEESEBURGER_NAME)
-                .setUnlocalizedName("cheeseBurger");
-
-        fishBurger = new ItemFoodSH(18, 0.9f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.FISHBURGER_NAME)
-                .setUnlocalizedName("fishBurger");
-
-
-
-        chocolate = new ItemFoodSH(4, 0.7f, false)
-                .setMaxStackSize(16)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.CHOCOLATE_NAME)
-                .setUnlocalizedName("chocolate");
-
-        muffin = new ItemFoodSH(4, 0.7f, false)
-                .setMaxStackSize(16)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.MUFFIN_NAME)
-                .setUnlocalizedName("muffin");
-        
-        muffinChoc = new ItemFoodSH(6, 0.8f, false)
-                .setMaxStackSize(16)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.MUFFINCHOC_NAME)
-                .setUnlocalizedName("muffinChoc");
-
-        mug = new ItemSH()
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.MUG_NAME)
-                .setUnlocalizedName("mug");
-        
-        mugChoc = new ItemMugFilled(4, 0.5f, false)
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.MUGCHOC_NAME)
-                .setUnlocalizedName("mugChoc")
-                .setContainerItem(mug);
-
-
-
-        applePie = new ItemFoodSH(8, 0.8f, false)
-                .setMaxStackSize(16)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.APPLEPIE_NAME)
-                .setUnlocalizedName("applePie");
-
-        omelette = new ItemFoodSH(4, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.OMELETTE_NAME)
-                .setUnlocalizedName("omelette");
-        
-        bacon = new ItemFoodSH(10, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.BACON_NAME)
-                .setUnlocalizedName("bacon");
-        
-        sushi = new ItemFoodSH(8, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SUSHI_NAME)
-                .setUnlocalizedName("sushi");
-
-
-
-        jamJar = new ItemSH()
-                .setMaxStackSize(16)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.JAMJAR_NAME)
-                .setUnlocalizedName("jamJar");
-        
-        jamJarApple = new ItemSH()
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.JAMJARAPPLE_NAME)
-                .setUnlocalizedName("jamJarApple")
-                .setContainerItem(jamJar);
-        
-        jamJarMelon = new ItemSH()
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.JAMJARMELON_NAME)
-                .setUnlocalizedName("jamJarMelon")
-                .setContainerItem(jamJar);
-        
-        jamJarStrawberry = new ItemSH()
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.JAMJARSTRAWBERRY_NAME)
-                .setUnlocalizedName("jamJarStrawberry")
-                .setContainerItem(jamJar);
-
-        jamJarGrape = new ItemSH()
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.JAMJARGRAPE_NAME)
-                .setUnlocalizedName("jamJarGrape")
-                .setContainerItem(jamJar);
-
-
-
-        sandwichApple = new ItemFoodSH(16, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SANDWICHAPPLE_NAME)
-                .setUnlocalizedName("sandwichApple");
-        
-        sandwichMelon = new ItemFoodSH(16, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SANDWICHMELON_NAME)
-                .setUnlocalizedName("sandwichMelon");
-        
-        sandwichStrawberry = new ItemFoodSH(16, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SANDWICHSTRAWBERRY_NAME)
-                .setUnlocalizedName("sandwichStrawberry");
-
-        sandwichGrape = new ItemFoodSH(16, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SANDWICHGRAPE_NAME)
-                .setUnlocalizedName("sandwichGrape");
-
-        sandwichCheese = new ItemFoodSH(16, 1F, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SANDWICHCHEESE_NAME)
-                .setUnlocalizedName("sandwichCheese");
-
-
-
-        pancakes = new ItemFoodSH(6, 0.8f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.PANCAKES_NAME)
-                .setUnlocalizedName("pancakes");
-        
-        pancakesApple = new ItemFoodSH(11, 0.8f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.PANCAKESAPPLE_NAME)
-                .setUnlocalizedName("pancakesApple");
-
-
-
-        frenchToast = new ItemFoodSH(6, 0.8f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.FRENCHTOAST_NAME)
-                .setUnlocalizedName("frenchToast");
-
-        boxLunch = new ItemFoodSH(10, 1f, false)
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.BOXLUNCH_NAME)
-                .setUnlocalizedName("boxLunch");
-        
-        fruitSalad = new ItemFoodSH(13, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.FRUITSALAD_NAME)
-                .setContainerItem(Items.bowl)
-                .setUnlocalizedName("fruitSalad");
-
-        friedEgg = new ItemFoodSH(4, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.FRIEDEGG_NAME)
-                .setUnlocalizedName("friedEgg");
-        
-        scrambledEgg = new ItemFoodSH(8, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SCRAMBLEDEGG_NAME)
-                .setUnlocalizedName("scrambledEgg");
-
-        tacoShell = new ItemFoodSH(6, 0.5f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.TACOSHELL_NAME)
-                .setUnlocalizedName("tacoShell");
-        
-        taco = new ItemFoodSH(14, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.TACO_NAME)
-                .setUnlocalizedName("taco");
-
-        lambSteak = new ItemFoodSH(10, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.LAMBSTEAK_NAME)
-                .setUnlocalizedName("lambSteak");
-
-        bucketCheese = new ItemSH()
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.BUCKETCHEESE_NAME)
-                .setContainerItem(Items.bucket)
-                .setUnlocalizedName("bucketCheese");
-
-        cheese = new ItemFoodSH(3, 0.8F, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.CHEESE_NAME)
-                .setUnlocalizedName("cheese");
-        
-        macAndCheese = new ItemFoodSH(17, 1F, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.MACANDCHEESE_NAME)
-                .setContainerItem(Items.bowl)
-                .setUnlocalizedName("macAndCheese");
-
-        ramen = new ItemFoodSH(18, 1F, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.RAMEN_NAME)
-                .setUnlocalizedName("ramen");
-        
-        butter = new ItemSH()
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.BUTTER_NAME)
-                .setUnlocalizedName("butter");
-        
-        frenchFries = new ItemFoodSH(6, 0.5f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.FRENCHFRIES_NAME)
-                .setUnlocalizedName("frenchFries");
-        
-        potatoCake = new ItemFoodSH(8, 1f, false)
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.POTATOCAKE_NAME)
-                .setUnlocalizedName("potatoCake");
-
-
-
-        bottle = new ItemSH()
-                .setMaxStackSize(16)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.BOTTLE_NAME)
-                .setUnlocalizedName("bottle");
-
-        bottleWine = new ItemBottleFilled(1, 0.4F, false)
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.BOTTLEWINE_NAME)
-                .setUnlocalizedName("bottleWine")
-                .setContainerItem(bottle);
-
-        bottleCider = new ItemBottleFilled(1, 0.4F, false)
-                .setMaxStackSize(1)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.BOTTLECIDER_NAME)
-                .setUnlocalizedName("bottleCider")
-                .setContainerItem(bottle);
-
-
-
-        eyeCandy = new ItemEyeCandy(0, 0.8f, false)
-                .setAlwaysEdible()
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.EYECANDY_NAME)
-                .setUnlocalizedName("eyeCandy");
-
-        spiderLollipop = new ItemSpiderLollipop(0, 0.8f, false)
-                .setAlwaysEdible()
-                .setMaxStackSize(64)
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setTextureName(StillHungry.modid + ":" + Strings.SPIDERLOLLIPOP_NAME)
-                .setUnlocalizedName("spiderLollipop");
 
         GameRegistry.registerItem(lunchbox, "StillHungry_lunchbox");
         GameRegistry.registerItem(fryingPan, "StillHungry_fryingPan");

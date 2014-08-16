@@ -20,8 +20,15 @@ import net.seventeencups.stillhungry.StillHungry;
 
 public class ItemBottleFilled extends ItemFood {
 
-    public ItemBottleFilled(int hunger, float sat, boolean wolf) {
+    public ItemBottleFilled(String unlocalizedName, int hunger, float sat, boolean wolf) {
         super(hunger, sat, wolf);
+
+        setTextureName(StillHungry.modid + ":" + unlocalizedName);
+        setUnlocalizedName(unlocalizedName);
+        setCreativeTab(StillHungry.tabStillHungry);
+
+        setContainerItem(ModItems.bottle);
+        setMaxStackSize(1);
     }
 
     @Override

@@ -6,29 +6,34 @@ import net.minecraft.item.ItemSeeds;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
+import net.seventeencups.stillhungry.StillHungry;
 
 /**
-* Still-Hungry
-*
-* ItemSeedsSH
-*
-* @author 17cupsofcoffee
-* @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
-*
-*/
+ * Still-Hungry
+ * <p/>
+ * ItemSeedsSH
+ *
+ * @author 17cupsofcoffee
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 
 public class ItemSeedsSH extends ItemSeeds implements IPlantable {
 
     private Block blockType;
     private Block soilBlock;
 
-    public ItemSeedsSH(Block type, Block soil) {
+    public ItemSeedsSH(String unlocalizedName, Block type, Block soil) {
         super(type, soil);
+
+        setTextureName(StillHungry.modid + ":" + unlocalizedName);
+        setUnlocalizedName(unlocalizedName);
+
         blockType = type;
         soilBlock = soil;
-        this.setCreativeTab(CreativeTabs.tabMaterials);
+
+        setCreativeTab(StillHungry.tabStillHungry);
         setMaxStackSize(64);
-        
+
     }
 
     @Override
@@ -45,10 +50,9 @@ public class ItemSeedsSH extends ItemSeeds implements IPlantable {
     public int getPlantMetadata(IBlockAccess world, int x, int y, int z) {
         return 0;
     }
-    
+
     @Override
-    public ItemSeedsSH setUnlocalizedName(String par1Str)
-    {
+    public ItemSeedsSH setUnlocalizedName(String par1Str) {
         super.setUnlocalizedName(par1Str);
         return this;
     }

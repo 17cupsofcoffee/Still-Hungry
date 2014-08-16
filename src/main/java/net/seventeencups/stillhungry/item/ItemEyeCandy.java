@@ -16,8 +16,10 @@ import net.minecraft.world.World;
 
 public class ItemEyeCandy extends ItemFoodSH {
 
-    public ItemEyeCandy(int hunger, float sat, boolean wolf) {
-        super(hunger, sat, wolf);
+    public ItemEyeCandy(String unlocalizedName, int hunger, float sat, boolean wolf) {
+        super(unlocalizedName, hunger, sat, wolf);
+
+        setAlwaysEdible();
     }
 
     @Override

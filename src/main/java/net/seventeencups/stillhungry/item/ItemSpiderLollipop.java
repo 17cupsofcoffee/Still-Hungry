@@ -16,8 +16,10 @@ import net.minecraft.world.World;
 
 public class ItemSpiderLollipop extends ItemFoodSH {
 
-    public ItemSpiderLollipop(int hunger, float sat, boolean wolf) {
-        super(hunger, sat, wolf);
+    public ItemSpiderLollipop(String unlocalizedName, int hunger, float sat, boolean wolf) {
+        super(unlocalizedName, hunger, sat, wolf);
+
+        setAlwaysEdible();
     }
     
     @Override

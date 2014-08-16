@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.seventeencups.stillhungry.StillHungry;
 
 /**
 * Still-Hungry
@@ -16,8 +17,12 @@ import net.minecraft.world.World;
 */
 
 public class ItemFoodSH extends ItemFood {
-    public ItemFoodSH(int hunger, float sat, boolean wolf) {
+    public ItemFoodSH(String unlocalizedName, int hunger, float sat, boolean wolf) {
         super(hunger, sat, wolf);
+
+        setTextureName(StillHungry.modid + ":" + unlocalizedName);
+        setUnlocalizedName(unlocalizedName);
+        setCreativeTab(StillHungry.tabStillHungry);
     }
 
     @Override
@@ -32,5 +37,13 @@ public class ItemFoodSH extends ItemFood {
             return par1ItemStack.stackSize <= 0 ? new ItemStack(this.getContainerItem()) : par1ItemStack;
         }
         else { return par1ItemStack; }
+    }
+
+    // This is overridden so I can chain the methods in ModItems.java - makes the code more readable
+    @Override
+    public ItemFoodSH setMaxStackSize(int size)
+    {
+        this.maxStackSize = size;
+        return this;
     }
 }
