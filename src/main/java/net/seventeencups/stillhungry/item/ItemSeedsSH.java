@@ -10,7 +10,7 @@ import net.seventeencups.stillhungry.StillHungry;
 
 /**
  * Still-Hungry
- * <p/>
+ *
  * ItemSeedsSH
  *
  * @author 17cupsofcoffee
