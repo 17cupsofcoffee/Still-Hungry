@@ -21,60 +21,18 @@ import net.seventeencups.stillhungry.reference.Strings;
 
 public class ModBlocks {
 
-    public static Block hedge;
-    public static Block roseHedge;
-    public static Block daffodilHedge;
-    public static Block riceBlock;
-    public static Block strawberryBlock;
-    public static Block stoveBlock;
-    public static Block stoveBlockBurning;
-    public static Block brewingBarrel;
-    //public static Block bananaBlock;
-    public static Block grapeBlock;
+    public static final BlockHedge hedge                = new BlockHedge(Strings.HEDGE_NAME);
+    public static final BlockHedge roseHedge            = new BlockHedge(Strings.ROSEHEDGE_NAME);
+    public static final BlockHedge daffodilHedge        = new BlockHedge(Strings.DAFFODILHEDGE_NAME);
+    public static final BlockRice riceBlock             = new BlockRice();
+    public static final BlockStrawberry strawberryBlock = new BlockStrawberry();
+    public static final BlockGrape grapeBlock           = new BlockGrape();
+    public static final BlockStove stoveBlock           = new BlockStove(false);
+    public static final BlockStove stoveBlockBurning    = (BlockStove) new BlockStove(true).setLightLevel(0.875F).setCreativeTab(null);
+    public static final BlockBarrel brewingBarrel       = new BlockBarrel();
+
 
     public static void init() {
-        hedge = new BlockHedge().setHardness(0.25f)
-                .setStepSound(Block.soundTypeGrass)
-                .setBlockName("hedge")
-                .setCreativeTab(StillHungry.tabStillHungry);
-
-        roseHedge = new BlockHedge()
-                .setHardness(0.25f)
-                .setStepSound(Block.soundTypeGrass)
-                .setBlockName("roseHedge")
-                .setCreativeTab(StillHungry.tabStillHungry);
-
-        daffodilHedge = new BlockHedge()
-                .setHardness(0.25f)
-                .setStepSound(Block.soundTypeGrass)
-                .setBlockName("daffodilHedge")
-                .setCreativeTab(StillHungry.tabStillHungry);
-
-        riceBlock = new BlockRice()
-                .setHardness(0.0f)
-                .setStepSound(Block.soundTypeGrass)
-                .setBlockName("riceBlock");
-
-        strawberryBlock = new BlockStrawberry()
-                .setHardness(0.0f)
-                .setStepSound(Block.soundTypeGrass)
-                .setBlockName("strawberryBlock");
-
-        stoveBlock = new BlockStove(false);
-
-        stoveBlockBurning = new BlockStove(true)
-                .setLightLevel(0.875F)
-                .setCreativeTab(null);
-
-        brewingBarrel = new BlockBarrel()
-                .setCreativeTab(StillHungry.tabStillHungry)
-                .setBlockName("brewingBarrel");
-
-        grapeBlock = new BlockGrape()
-                .setHardness(0.0f)
-                .setStepSound(Block.soundTypeGrass)
-                .setBlockName("grapeBlock");
-
         GameRegistry.registerBlock(hedge, Strings.HEDGE_NAME);
         GameRegistry.registerBlock(roseHedge, Strings.ROSEHEDGE_NAME);
         GameRegistry.registerBlock(daffodilHedge, Strings.DAFFODILHEDGE_NAME);
@@ -90,8 +48,6 @@ public class ModBlocks {
         GameRegistry.registerBlock(grapeBlock, Strings.GRAPEBLOCK_NAME);
 
         initBlockRecipes();
-
-        initLanguages();
     }
 
     private static void initBlockRecipes() {
@@ -106,28 +62,5 @@ public class ModBlocks {
         GameRegistry.addRecipe(hedgeStack, "ll", "ll", 'l', leavesStack);
         GameRegistry.addShapelessRecipe(new ItemStack(roseHedge), hedgeStack, new ItemStack(Blocks.red_flower));
         GameRegistry.addShapelessRecipe(new ItemStack(daffodilHedge), hedgeStack, new ItemStack(Blocks.yellow_flower));
-    }
-
-    private static void initLanguages() {
-//        LanguageRegistry.addName(hedge, "Hedge");
-//        MinecraftForge.setBlockHarvestLevel(hedge, "axe", 0);
-//
-//        LanguageRegistry.addName(roseHedge, "Flowered Hedge");
-//        MinecraftForge.setBlockHarvestLevel(roseHedge, "axe", 0);
-//
-//        LanguageRegistry.addName(daffodilHedge, "Flowered Hedge");
-//        MinecraftForge.setBlockHarvestLevel(daffodilHedge, "axe", 0);
-//
-//        LanguageRegistry.addName(riceBlock, "Rice");
-//
-//        LanguageRegistry.addName(strawberryBlock, "Strawberry");
-//
-//        LanguageRegistry.addName(stoveBlock, "Stove");
-//
-//        LanguageRegistry.addName(brewingBarrel, "Barrel");
-//
-//        //LanguageRegistry.addName(bananaBlock, "Banana Bunch");
-//
-//        LanguageRegistry.addName(grapeBlock, "Grape Vine");
     }
 }

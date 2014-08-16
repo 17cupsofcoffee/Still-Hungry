@@ -14,6 +14,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.seventeencups.stillhungry.StillHungry;
 import net.seventeencups.stillhungry.reference.GuiIds;
+import net.seventeencups.stillhungry.reference.Strings;
 import net.seventeencups.stillhungry.tileentity.TileBarrel;
 
 import java.util.Random;
@@ -36,6 +37,9 @@ public class BlockBarrel extends BlockContainer {
 
     public BlockBarrel() {
         super(Material.wood);
+
+        setCreativeTab(StillHungry.tabStillHungry);
+        setBlockName(Strings.BREWINGBARREL_NAME);
     }
 
     @Override

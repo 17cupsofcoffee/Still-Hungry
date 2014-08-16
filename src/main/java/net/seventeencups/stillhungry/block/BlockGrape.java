@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
 import net.seventeencups.stillhungry.item.ModItems;
+import net.seventeencups.stillhungry.reference.Strings;
 
 /**
 * Still-Hungry
@@ -21,6 +22,8 @@ import net.seventeencups.stillhungry.item.ModItems;
 public class BlockGrape extends BlockCrop {
     public BlockGrape() {
         super();
+
+        setBlockName(Strings.GRAPEBLOCK_NAME);
     }
     
     @Override

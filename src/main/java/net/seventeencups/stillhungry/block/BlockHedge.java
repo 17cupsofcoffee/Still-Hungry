@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.seventeencups.stillhungry.StillHungry;
+import net.seventeencups.stillhungry.reference.Strings;
 
 /**
 * Still-Hungry
@@ -17,8 +18,13 @@ import net.seventeencups.stillhungry.StillHungry;
 
 public class BlockHedge extends Block {
 
-    public BlockHedge() {
+    public BlockHedge(String unlocalizedName) {
         super(Material.leaves);
+
+        setHardness(0.25f);
+        setStepSound(Block.soundTypeGrass);
+        setBlockName(unlocalizedName);
+        setCreativeTab(StillHungry.tabStillHungry);
     }
 
     @Override

@@ -2,6 +2,7 @@ package net.seventeencups.stillhungry.block;
 
 import net.minecraft.item.Item;
 import net.seventeencups.stillhungry.item.ModItems;
+import net.seventeencups.stillhungry.reference.Strings;
 
 /**
 * Still-Hungry
@@ -16,6 +17,8 @@ import net.seventeencups.stillhungry.item.ModItems;
 public class BlockRice extends BlockCrop {
     public BlockRice() {
         super();
+
+        setBlockName(Strings.RICEBLOCK_NAME);
     }
     
     @Override

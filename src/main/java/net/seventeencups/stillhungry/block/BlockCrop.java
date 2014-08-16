@@ -1,5 +1,6 @@
 package net.seventeencups.stillhungry.block;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,6 +24,9 @@ public class BlockCrop extends BlockCrops {
 
     public BlockCrop() {
         super();
+
+        setHardness(0.0f);
+        setStepSound(Block.soundTypeGrass);
         setTickRandomly(true);
     }
     
