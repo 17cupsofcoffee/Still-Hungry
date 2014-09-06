@@ -1,6 +1,5 @@
 package net.seventeencups.stillhungry.item;
 
-import net.minecraft.item.ItemStack;
 import net.seventeencups.stillhungry.reference.Strings;
 
 /**
@@ -13,7 +12,7 @@ import net.seventeencups.stillhungry.reference.Strings;
 *
 */
 
-public class ItemFryingPan extends ItemSH {
+public class ItemFryingPan extends ItemCookingTool {
 
     public ItemFryingPan() {
         super(Strings.FRYINGPAN_NAME);
@@ -21,14 +20,4 @@ public class ItemFryingPan extends ItemSH {
         setMaxStackSize(1);
         setMaxDamage(250);
     }
-    
-    public ItemStack damageTool(ItemStack tool, int damage)
-      {
-             tool.setItemDamage(tool.getItemDamage()+damage);
-             if(tool.getItemDamage() > tool.getMaxDamage())
-             {
-                  return null;
-             }
-             return tool;
-      }
 }
