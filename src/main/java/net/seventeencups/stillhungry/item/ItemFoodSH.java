@@ -3,8 +3,11 @@ package net.seventeencups.stillhungry.item;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.seventeencups.stillhungry.StillHungry;
+
+import java.util.List;
 
 /**
 * Still-Hungry
@@ -45,5 +48,10 @@ public class ItemFoodSH extends ItemFood {
     {
         this.maxStackSize = size;
         return this;
+    }
+
+    @Override
+    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List tooltipList, boolean par4){
+        tooltipList.add("Quality: " + EnumChatFormatting.YELLOW + "OK");
     }
 }
